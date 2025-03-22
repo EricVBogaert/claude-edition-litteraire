@@ -1,0 +1,16 @@
+LICENCE.md
+README.md
+setup.py
+claude_edition_litteraire/__init__.py
+claude_edition_litteraire/core.py
+claude_edition_litteraire.egg-info/PKG-INFO
+claude_edition_litteraire.egg-info/SOURCES.txt
+claude_edition_litteraire.egg-info/dependency_links.txt
+claude_edition_litteraire.egg-info/entry_points.txt
+claude_edition_litteraire.egg-info/requires.txt
+claude_edition_litteraire.egg-info/top_level.txt
+claude_edition_litteraire/structure/__init__.py
+claude_edition_litteraire/structure/fixer.py
+claude_edition_litteraire/structure/project_structure.py
+claude_edition_litteraire/structure/reporter.py
+claude_edition_litteraire/structure/validator.py

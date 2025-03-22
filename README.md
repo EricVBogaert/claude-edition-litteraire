@@ -14,6 +14,8 @@ Cette bibliothèque fournit des outils pour gérer un projet d'édition littéra
 - **Intégration Claude** : Révision de contenu, assistance à l'écriture, etc.
 - **Interface CLI** : Commandes simples pour gérer votre projet
 
+![Logo Centaure - Édition littéraire assistée par IA](media/branding/logo-centaure.png):x
+
 ## Installation
 
 ```bash

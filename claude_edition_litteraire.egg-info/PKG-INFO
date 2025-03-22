@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: claude_edition_litteraire
+Version: 0.1.0
+Summary: Bibliothèque pour l'édition littéraire assistée par Claude
+Author: Eric Van Bogaert et al.
+Author-email: contact@example.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+License-File: LICENCE.md
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: colorama>=0.4.4
+Requires-Dist: tqdm>=4.64.0
+Requires-Dist: rich>=12.0.0
+Provides-Extra: cli
+Requires-Dist: click>=8.0.0; extra == "cli"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary

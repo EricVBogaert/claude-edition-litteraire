@@ -1,0 +1,2 @@
+[console_scripts]
+claude-lit = claude_edition_litteraire.cli.main:main

@@ -1,6 +1,3 @@
-Voici le contenu pour le fichier `claude_edition_litteraire/structure/fixer.py` :
-
-```python
 # claude_edition_litteraire/structure/fixer.py
 """
 Module de correction automatique des problèmes de structure.
@@ -492,4 +489,3 @@ def replace_link_in_content(content: str, old_link: str, new_link: str) -> str:
     content = re.sub(wiki_pattern, wiki_replacer, content)
     
     return content
-```
