@@ -12,6 +12,7 @@ from .automation import AutomationManager
 from .claude import ClaudeManager
 from .utils.config import ConfigManager
 from .utils.logging import get_logger
+from .llm.unified_llm import UnifiedLLM
 
 logger = get_logger(__name__)
 
@@ -40,7 +41,25 @@ class Project:
         
         if not self.path.is_dir():
             raise NotADirectoryError(f"Le chemin spécifié n'est pas un répertoire: {self.path}")
+                # ...
+        self.config = ConfigManager(project_path, config_path)
         
+        # Initialiser UnifiedLLM avec les configurations
+        api_key = self.config.get("claude.api_key")
+        api_url = self.config.get("lmstudio.api_url", "http://localhost:1234/v1")
+        default_provider = self.config.get("llm.default_provider", "auto")
+        
+        self.llm = UnifiedLLM(
+            provider=default_provider,
+            api_key=api_key,
+            api_url=api_url
+        )
+        
+        # Initialiser les modules
+        self.structure = ProjectStructure(self)
+        self.content = ContentManager(self)
+        # ...
+
         # Initialiser le gestionnaire de configuration
         self.config = ConfigManager(self.path, config_path)
         
@@ -130,5 +149,13 @@ class Project:
         """
         return self.automation.export(format, output_path)
     
+    def analyze_content(self, content, instruction):
+        """Analyse un contenu avec le LLM configuré."""
+        messages = [
+            {"role": "system", "content": instruction},
+            {"role": "user", "content": content}
+        ]
+        return self.llm.chat(messages)   
     def __repr__(self) -> str:
         return f"Project(path='{self.path}')"
+    
