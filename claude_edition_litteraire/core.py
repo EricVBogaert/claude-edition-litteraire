@@ -8,7 +8,7 @@ from typing import Dict, List, Optional, Union, Any
 
 from .structure import ProjectStructure
 from .content import ContentManager
-from .automation import AutomationManager
+#from .automation import AutomationManager
 from .claude import ClaudeManager
 from .utils.config import ConfigManager
 from .utils.logging import get_logger
@@ -56,14 +56,6 @@ class Project:
         )
         
         # Initialiser les modules
-        self.structure = ProjectStructure(self)
-        self.content = ContentManager(self)
-        # ...
-
-        # Initialiser le gestionnaire de configuration
-        self.config = ConfigManager(self.path, config_path)
-        
-        # Initialiser les différents modules
         self.structure = ProjectStructure(self)
         self.content = ContentManager(self)
         self.automation = AutomationManager(self)
