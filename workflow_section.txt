@@ -1,0 +1,30 @@
+
+## Amélioration du workflow développeur
+
+Le développement du module a été grandement facilité par l'adoption des pratiques suivantes:
+
+### Utilisation de Git pour la gestion de versions
+
+- **Restauration rapide**: Possibilité de revenir à un état stable (`git checkout -- fichier`) en cas de modification problématique
+- **Suivi des modifications**: Visibilité claire sur les changements effectués (`git diff`)
+- **Branches expérimentales**: Isolation des modifications expérimentales dans des branches dédiées
+
+### Artefacts Bash pour l'automatisation
+
+L'utilisation d'artefacts bash s'est révélée particulièrement efficace pour:
+
+- **Modifications par lots**: Utilisation de `sed` pour appliquer des modifications cohérentes sur plusieurs fichiers
+- **Tests automatisés**: Scripts d'exécution de tests après modifications
+- **Diagnostic**: Utilisation de scripts pour détecter les problèmes (ex: imports circulaires)
+
+#### Exemple: Modification de structure de code avec sed
+
+```bash
+# Modification de l'héritage d'une classe
+sed -i 's/class LLMProvider(ABC):/class LLMProvider(LLMProviderInterface, ABC):/' "fichier.py"
+
+# Ajout d'imports
+sed -i '1i from ..interfaces.llm_interface import LLMProviderInterface' "fichier.py"
+
+# Détection de patterns
+grep -r "import.*circular" --include="*.py" .
