@@ -1,0 +1,20 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs et rapports
+logs/
+.coverage
+htmlcov/
+
+# Sauvegardes
+*.bak
+
+# Fichiers système
+.DS_Store
