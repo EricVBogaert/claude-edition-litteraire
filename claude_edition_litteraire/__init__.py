@@ -7,18 +7,5 @@ avec validation de structure, correction automatique, et intégration avec l'API
 
 __version__ = "0.1.0"
 
-from .core import Project
-from . import structure
-from . import content
-from . import automation
-from . import claude
-from . import utils
-
-__all__ = [
-    "Project",
-    "structure",
-    "content",
-    "automation", 
-    "claude",
-    "utils"
-]
+# Éviter les imports circulaires en ne faisant pas d'import ici
+# Les modules peuvent être importés directement par les utilisateurs

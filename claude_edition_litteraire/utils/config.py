@@ -28,7 +28,7 @@ DEFAULT_CONFIG = {
     },
     "claude": {
         "api_key": "",
-        "model": "claude-3-opus-20240229"
+        "model": "claude-3-5-sonnet-20241022"
     },
     "export": {
         "default_format": "markdown",

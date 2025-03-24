@@ -34,7 +34,7 @@ class UnifiedLLM:
         try:
             # Essayer d'initialiser Claude
             if provider in ["claude", "auto"]:
-                self.providers["claude"] = ClaudeProvider(api_key)
+                self.providers["claude"] = ClaudeProvider(api_key, self.config.get("claude.model", "claude-3-5-sonnet-20241022"))
         except (ImportError, ValueError) as e:
             if provider == "claude":
                 logger.error(f"Impossible d'initialiser Claude: {e}")

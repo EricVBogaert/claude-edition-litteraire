@@ -58,9 +58,12 @@ class Project:
         # Initialiser les modules
         self.structure = ProjectStructure(self)
         self.content = ContentManager(self)
-        self.automation = AutomationManager(self)
+        # ----
+
         self.claude = ClaudeManager(self)
-    
+        self.automation = AutomationManager(self)
+
+
     def validate(self) -> Dict[str, List[Dict[str, Any]]]:
         """
         Valide l'ensemble du projet et retourne tous les problèmes détectés.
@@ -151,3 +154,10 @@ class Project:
     def __repr__(self) -> str:
         return f"Project(path='{self.path}')"
     
+# Ou ajoutez une implémentation minimale:
+class AutomationManager:
+    def __init__(self, project):
+        self.project = project
+    
+    def export(self, format, output_path=None):
+        return "TODO: Implement export functionality"

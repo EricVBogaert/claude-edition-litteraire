@@ -33,4 +33,11 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
     ],
+    # ... autres paramètres
+    tests_require=["pytest>=7.0.0", "pytest-cov>=4.0.0"],
+    command_options={
+        'test': {
+            'test_suite': ('setup.py', 'tests'),
+        },
+    },
 )
